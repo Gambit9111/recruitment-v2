@@ -1,0 +1,51 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider = "prisma-client-js"
+    previewFeatures = ["jsonProtocol"]
+}
+
+datasource db {
+    provider = "sqlite"
+    url      = env("DATABASE_URL")
+}
+
+model Vacancy {
+  id              Int           @id @default(autoincrement())
+  title           String @unique
+  description     String
+  location        String
+  salaryRange     String
+  experienceLevel String
+  publishedDate   DateTime
+  tags VacancyTag[]
+}
+
+model Tag {
+  id      Int           @id @default(autoincrement())
+  name    String @unique
+  vacancies VacancyTag[]
+}
+
+model VacancyTag {
+  id        Int      @id @default(autoincrement())
+  vacancyTitle String
+  tagName     String
+  vacancy   Vacancy  @relation(fields: [vacancyTitle], references: [title])
+  tag       Tag      @relation(fields: [tagName], references: [name])
+
+  @@unique([vacancyTitle, tagName])
+}
+
+model Applicant {
+  id             Int      @id @default(autoincrement())
+  firstName      String
+  lastName       String
+  email          String   @unique
+  phone          String
+  address        String
+  city           String
+  country        String
+  applicationDate DateTime
+}
