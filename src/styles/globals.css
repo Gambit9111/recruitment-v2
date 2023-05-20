@@ -25,6 +25,6 @@ body {
     width: 300px;
     height: 300px;
     z-index: 40;
-    background: radial-gradient(circle, rgba(255,255,0,0.2) 0%, rgba(255,255,0,0) 60%);
+    background: radial-gradient(circle, rgba(214, 132, 9, 0.2) 0%, rgba(196, 97, 4, 0) 60%);
     pointer-events: none;
   }
