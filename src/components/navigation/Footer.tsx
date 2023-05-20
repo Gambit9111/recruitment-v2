@@ -6,8 +6,17 @@ type FooterProps = {
 
 const Footer: React.FC<FooterProps> = () => {
   return (
-  <footer className="bg-color-graydark rounded-t-lg text-color-white py-4 px-4 md:flex md:justify-between md:items-center md:px-8">
-    <div>
+  <footer className="bg-color-black">
+    <h4>info@engnr.com</h4>
+    <h4>+31 41232 232314</h4>
+    <h4>Pastoor van Breugelstraat 93</h4>
+    <h4>4744 RC Bosschenhoofd</h4>
+
+
+
+
+
+    {/* <div>
       <p className='text-center'>© 2023 Engnr</p>
       <p className="hidden md:block">Contact: info@engnr.com</p>
       <p className="hidden md:block">Phone: 123-456-7890</p>
@@ -20,7 +29,7 @@ const Footer: React.FC<FooterProps> = () => {
         <li className="hidden md:block"><Link href="/careers">Careers</Link></li>
         <li className="hidden md:block"><Link href="/about-us">About Us</Link></li>
       </ul>
-    </nav>
+    </nav> */}
   </footer>
   );
 };

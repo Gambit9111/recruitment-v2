@@ -10,7 +10,7 @@ const Header: React.FC<HeaderProps> = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="bg-color-graydark text-color-white rounded-b-lg z-10">
+    <header className="bg-color-black text-color-white rounded-b-lg z-10">
       <div className="px-4 py-2 flex justify-between items-center">
         <div className="font-bold text-xl text-color-yellow">Engnr</div>
         <div className="md:hidden">

@@ -1,6 +1,15 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import MainLayout from "@/components/layouts/MainLayout";
+import VacanciesButton from "@/components/misc/VacanciesButton";
+import welder1png from "../../public/images/welder1.png";
+import warehouse2png from "../../public/images/warehouse2.png";
+import aircraft3 from "../../public/images/aircraft3.png";
+import factory4 from "../../public/images/factory4.png";
+import warehouse5 from "../../public/images/warehouse5.png";
+import construction6 from "../../public/images/construction6.png";
+
+import SuccessCard from "@/components/misc/SuccessCard";
 
 type HomeProps = {};
 
@@ -13,15 +22,181 @@ const Home: NextPage<HomeProps> = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <MainLayout>
-        <div className="flex min-h-screen flex-col items-center overflow-hidden relative">
-          <div className="w-full h-[150%] md:w-1/2 md:h-auto absolute top-0">
-            <img
-              src="/images/bannerImage.webp" // adjust this according to where the image is in the public directory
-              className="w-full h-full object-cover" 
-              alt="heroImage1"
-            />
+        <div className="relative flex min-h-screen flex-col items-start overflow-hidden">
+          <h1 className="mt-12 pr-28 text-3xl font-bold uppercase tracking-tighter">
+            Big Goals? When Results matter, Engnr. Delivers.
+          </h1>
+          <h2 className="mt-8 pr-20 tracking-tighter">
+            Discover. Connect. Empower. Merging intuition and innovation to
+            achieve exceptional talent solutions.
+          </h2>
+          <VacanciesButton />
+          <div className="mt-8 flex w-full items-center gap-4">
+            <div className="h-[1px] w-full bg-color-white" />
+            <svg
+              width="50"
+              height="50"
+              viewBox="0 0 50 50"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M35 27L25 37M25 37L15 27M25 37V13"
+                stroke="#F6F2EC"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <circle cx="25" cy="25" r="24.5" stroke="#F6F2EC" />
+            </svg>
           </div>
+          <h1 className="text-2xl font-medium tracking-tighter">
+            We're not your average recruiting firm.
+          </h1>
+          <h2 className="mt-8 pr-10 tracking-tighter">
+            Since 2011, Engnr. has been pivotal in crafting successful careers
+            and shaping the future of work. Our team, with its rich and diverse
+            background, excels in both corporate recruitment and independent
+            talent scouting, fusing our savvy and practicality to deliver
+            extraordinary employment opportunities for our clients.
+          </h2>
+          <span className="flex gap-4">
+            <p className="text-[10rem] tracking-[-0.15em]">$1B</p>
+            <p className="text-[10rem] tracking-[-0.15em]">+</p>
+          </span>
+          <h2 className="pr-16 tracking-tighter">
+            Supporting a Wide Range of Employers and Job Seekers, from Startups
+            to Fortune 500 Companies.
+          </h2>
+          <div className="my-16 grid grid-cols-2 tracking-tighter">
+            <div className="pr-2">
+              <h1 className="text-6xl">98%</h1>
+              <h2 className="text-sm">Employee Retention Rate</h2>
+            </div>
+            <div className="pr-2">
+              <h1 className="text-6xl">$3B</h1>
+              <h2 className="text-sm">Achieved $3B in Customer Cost Savings</h2>
+            </div>
+            <div className="pr-2">
+              <h1 className="text-6xl">97%</h1>
+              <h2 className="text-sm">Customer Satisfaction Rating</h2>
+            </div>
+          </div>
+          <div className="h-[1px] w-full bg-color-white" />
+          {/* Service Pillars */}
+          <h1 className="mt-16 text-2xl font-medium tracking-tighter ">
+            Service Pillars
+          </h1>
+          <h2 className="mt-2 pr-10 tracking-tighter">
+            Success comes from creating meaningful relationships with our
+            clients and candidates, considering ourselves as an integral part of
+            your professional journey.
+          </h2>
+          <button className="mt-8 flex gap-4 rounded-sm bg-color-yellow px-12 py-4 tracking-tighter text-color-black">
+            <p>Learn More</p>
+          </button>
+          <div className="mt-24 flex w-full flex-col gap-6">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <h3>01</h3>
+                <h1 className="text-xl">Talent Acquisition </h1>
+              </div>
+              <div className="h-14 w-14 rounded-full bg-red-500" />
+            </div>
+            <div className="h-[1px] w-full bg-color-white" />
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <h3>02</h3>
+                <h1 className="text-xl">Technical Skillset Matching</h1>
+              </div>
+              <div className="h-14 w-14 rounded-full bg-green-500" />
+            </div>
+            <div className="h-[1px] w-full bg-color-white" />
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <h3>03</h3>
+                <h1 className="text-xl">Remote Workforce Planning</h1>
+              </div>
+              <div className="h-14 w-14 rounded-full bg-teal-500" />
+            </div>
+            <div className="h-[1px] w-full bg-color-white" />
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <h3>04</h3>
+                <h1 className="text-xl">Candidate Skill Analysis</h1>
+              </div>
+              <div className="h-14 w-14 rounded-full bg-blue-500" />
+            </div>
+            <div className="h-[1px] w-full bg-color-white" />
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <h3>05</h3>
+                <h1 className="text-xl">Business & HR Management</h1>
+              </div>
+              <div className="h-14 w-14 rounded-full bg-yellow-500" />
+            </div>
+            <div className="h-[1px] w-full bg-color-white" />
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <h3>06</h3>
+                <h1 className="text-xl">IT & Tech Recruiting</h1>
+              </div>
+              <div className="h-14 w-14 rounded-full bg-orange-500" />
+            </div>
+            <div className="h-[1px] w-full bg-color-white" />
+          </div>
+          <h1 className="mt-24 text-lg font-bold">
+            --"In our firm's initial years, Engnr quickly scaled its operations
+            by employing smart and innovative strategies to aid our clients in
+            landing their dream jobs. Now, leveraging that experience, we are
+            set to broaden our reach to additional job markets, persistently
+            delivering top-notch services in the years to come."
+          </h1>
+          <h2 className="mt-8">Curtis Porter, President</h2>
+          <div className="my-16 h-[1px] w-full bg-color-white" />
         </div>
+        {/* Success stories */}
+        <div className="space-y-8">
+          <h1 className="mb-8 text-2xl font-medium ">Our Stories</h1>
+          <SuccessCard
+            image={welder1png}
+            headline="Timothy"
+            pharagraph="A seasoned welder from a small town, Timothy desired larger-scale opportunities to showcase his skills. With Engnr, he connected with a major construction company undertaking an infrastructure project in a bustling city. His portfolio and solid references landed him the role of Lead Welder. Today, he leads a team, contributing significantly to monumental projects, and symbolizes the possibilities that Engnr provides for skilled tradespeople seeking growth and progress."
+          />
+          <SuccessCard
+            image={warehouse2png}
+            headline="Nia"
+            pharagraph="Once a forklift operator in a local warehouse, yearned for growth. Through Engnr, she connected with a multinational logistics company, impressing them with her diligence and ambition. Today, Nia supervises an entire warehouse shift, efficiently managing goods movement. Her ascent, despite being in a male-dominated field, epitomizes Engnr's mission of bridging the gap between potential and opportunities."
+          />
+          <SuccessCard
+            image={aircraft3}
+            headline="Viktor"
+            pharagraph="An Eastern European aircraft mechanic, sought international opportunities to broaden his experience. Engnr helped him connect with a renowned global airline. His profound expertise and passion secured him the position. Today, Viktor serves as a vital part of the airline's maintenance team, working on cutting-edge aircraft. His story exemplifies Engnr's commitment to connecting skilled individuals with opportunities, transcending borders and industries."
+          />
+          <SuccessCard
+            image={factory4}
+            headline="Anastasya"
+            pharagraph="Experienced machine operator, desired to take her passion for premium beer production to the next level. Using Engnr, she found a position as a Head Machine Operator at a leading craft brewery. Her unique blend of technical skills and knowledge about the brewing process made her the perfect candidate. Today, Anastasya oversees the production line of one of the country's most esteemed breweries, ensuring every batch meets the highest quality standards. Her story showcases how Engnr can match unique talents with niche industries to brew up success."
+          />
+          <SuccessCard
+            image={warehouse5}
+            headline="Igor"
+            pharagraph="At just 23, Igor from Ukraine displayed exceptional organizational and leadership skills that belied his young age. Keen to apply these talents in a demanding environment, he turned to Engnr. Through our platform, he connected with an international corporation in need of an Area Manager for their large-scale warehouse. His youthful energy, strategic thinking, and ability to manage diverse teams quickly made him an indispensable asset to the company. Today, Igor successfully oversees daily operations, embodying Engnr's vision of driving success through a perfect blend of talent and opportunity."
+          />
+          <SuccessCard
+            image={construction6}
+            headline="Tomas"
+            pharagraph="Hailing from a family of builders, Tomas was passionate about construction. But he aspired to shift from hands-on work to managerial roles. Engnr bridged the gap, connecting him with a company seeking a site manager for an ambitious construction project. With his deep understanding of the field and leadership skills, Tomas made an instant impact. He is now successfully overseeing complex operations, ensuring projects are completed within scope and budget. Tomas' journey is testament to Engnr's mission of empowering skilled professionals to reach their full potential."
+          />
+        </div>
+        <h1 className="my-8 text-xl">
+          Celebrating a decade of thought leadership, innovation and client
+          partnerships.
+        </h1>
+        <button className="my-8 flex gap-4 rounded-sm bg-color-yellow px-12 py-4 tracking-tighter text-color-black">
+          <p>Learn More</p>
+        </button>
+        <div className="my-16 h-[1px] w-full bg-color-white" />
       </MainLayout>
     </>
   );
