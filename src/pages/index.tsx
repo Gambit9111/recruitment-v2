@@ -26,8 +26,8 @@ type HomeProps = {};
 const Home: NextPage<HomeProps> = () => {
 
   const { scrollY } = useViewportScroll();
-  const xPosition1 = useTransform(scrollY, [500, 50], ['-30vw', '0vw']);
-  const xPosition2 = useTransform(scrollY, [500, 50], ['30vw', '0vw']);
+  const xPosition1 = useTransform(scrollY, [300, 50], ['-70vw', '0vw']);
+  const xPosition2 = useTransform(scrollY, [300, 50], ['70vw', '0vw']);
 
 
 
