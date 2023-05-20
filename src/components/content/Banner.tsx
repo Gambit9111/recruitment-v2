@@ -44,11 +44,11 @@ const Banner: React.FC = () => {
   const [expandedSection, setExpandedSection] = useState<number | null>(null);
 
   return (
-    <div className="mt-24 flex w-full flex-col gap-6">
+    <div className="mt-24 flex w-full flex-col">
       {sections.map((section, index) => (
         <React.Fragment key={index}>
           <div
-            className="flex items-center justify-between cursor-pointer"
+            className="flex items-center justify-between cursor-pointer py-3"
             onClick={() => setExpandedSection(expandedSection === index ? null : index)}
           >
             <div className="flex items-center gap-3">
@@ -63,7 +63,7 @@ const Banner: React.FC = () => {
             animate={{ height: expandedSection === index ? "auto" : 0 }}
             transition={{ duration: 0.3 }}
           >
-            <p className="px-6 py-4 text-color-white">{section.content}</p>
+            <p className="p-2 text-color-white">{section.content}</p>
           </motion.div>
           <div className="h-[1px] w-full bg-color-white" />
         </React.Fragment>
