@@ -9,7 +9,9 @@ import factory4 from "../../public/images/factory4.png";
 import warehouse5 from "../../public/images/warehouse5.png";
 import construction6 from "../../public/images/construction6.png";
 
-import { motion, useViewportScroll, useTransform } from "framer-motion";
+import React, { useState, useEffect } from "react";
+
+import { motion, useViewportScroll, useTransform, useScroll } from "framer-motion";
 
 import SuccessCard from "@/components/misc/SuccessCard";
 
@@ -28,10 +30,26 @@ const textVariants = {
 type HomeProps = {};
 
 const Home: NextPage<HomeProps> = () => {
-  const { scrollY } = useViewportScroll();
+  const { scrollY } = useScroll();
+  const [hasScrolled, setHasScrolled] = useState(false);
   const xPosition1 = useTransform(scrollY, [300, 10], ["-70vw", "0vw"]);
   const xPosition2 = useTransform(scrollY, [300, 10], ["70vw", "0vw"]);
   const yPosition3 = useTransform(scrollY, [300, 100], ["-100vh", "0vh"]);
+
+  const xPosition4 = useTransform(scrollY, [400, 10], ["0vw", "100vw"]);
+  const opacityValue1 = useTransform(scrollY, [400, 10], [1, 0]);
+
+
+  useEffect(() => {
+    const onScroll = () => {
+      if (!hasScrolled && window.pageYOffset > 0) {
+        setHasScrolled(true);
+      }
+    };
+
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [hasScrolled]);
 
   return (
     <>
@@ -111,16 +129,27 @@ const Home: NextPage<HomeProps> = () => {
               <circle cx="25" cy="25" r="24.5" stroke="#F6F2EC" />
             </svg>
           </div>
-          <h1 className="text-2xl font-medium tracking-tighter">
+          <motion.h1
+            style={{ x: xPosition4 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: hasScrolled ? 1 : 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-2xl font-medium tracking-tighter"
+          >
             We're not your average recruiting firm.
-          </h1>
-          <h2 className="mt-8 pr-10 tracking-tighter">
+          </motion.h1>
+          <motion.h2
+                    style={{ opacity: opacityValue1 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: hasScrolled ? 1 : 0 }}
+                    transition={{ duration: 0.5 }}
+          className="mt-8 pr-10 tracking-tighter">
             Since 2011, Engnr. has been pivotal in crafting successful careers
             and shaping the future of work. Our team, with its rich and diverse
             background, excels in both corporate recruitment and independent
             talent scouting, fusing our savvy and practicality to deliver
             extraordinary employment opportunities for our clients.
-          </h2>
+          </motion.h2>
           <span className="flex gap-4">
             <p className="text-[10rem] tracking-[-0.15em]">$1B</p>
             <p className="text-[10rem] tracking-[-0.15em]">+</p>
