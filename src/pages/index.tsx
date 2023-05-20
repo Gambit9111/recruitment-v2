@@ -9,11 +9,28 @@ import factory4 from "../../public/images/factory4.png";
 import warehouse5 from "../../public/images/warehouse5.png";
 import construction6 from "../../public/images/construction6.png";
 
+import { motion, useViewportScroll, useTransform } from "framer-motion";
+
 import SuccessCard from "@/components/misc/SuccessCard";
+
+// Animation Variants
+const textVariants = {
+  hidden: { opacity: 0, x: "-100vw" },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.7 } },
+  hidden2: { opacity: 0, x: "100vw" },
+  visible2: { opacity: 1, x: 0, transition: { duration: 0.9 } },
+};
 
 type HomeProps = {};
 
 const Home: NextPage<HomeProps> = () => {
+
+  const { scrollY } = useViewportScroll();
+  const xPosition1 = useTransform(scrollY, [500, 50], ['-30vw', '0vw']);
+  const xPosition2 = useTransform(scrollY, [500, 50], ['30vw', '0vw']);
+
+
+
   return (
     <>
       <Head>
@@ -23,13 +40,25 @@ const Home: NextPage<HomeProps> = () => {
       </Head>
       <MainLayout>
         <div className="relative flex min-h-screen flex-col items-start overflow-hidden">
-          <h1 className="mt-12 pr-28 text-3xl font-bold uppercase tracking-tighter">
+          <motion.h1
+            style={{ x: xPosition1 }}
+            variants={textVariants}
+            initial="hidden"
+            animate="visible"
+            className="gradient-text mt-12 pr-28 text-3xl font-bold uppercase tracking-tighter"
+          >
             Big Goals? When Results matter, Engnr. Delivers.
-          </h1>
-          <h2 className="mt-8 pr-20 tracking-tighter">
+          </motion.h1>
+          <motion.h2
+            style={{ x: xPosition2 }}
+            variants={textVariants}
+            initial="hidden2"
+            animate="visible2"
+            className="mt-8 pr-20 tracking-tighter"
+          >
             Discover. Connect. Empower. Merging intuition and innovation to
             achieve exceptional talent solutions.
-          </h2>
+          </motion.h2>
           <VacanciesButton />
           <div className="mt-8 flex w-full items-center gap-4">
             <div className="h-[1px] w-full bg-color-white" />

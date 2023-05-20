@@ -10,3 +10,10 @@ body {
 * {
     -webkit-tap-highlight-color: transparent;
   }
+
+  .gradient-text {
+    background: linear-gradient(45deg, #FFD95A, #111011);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
