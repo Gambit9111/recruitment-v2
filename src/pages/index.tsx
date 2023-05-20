@@ -196,7 +196,6 @@ const Home: NextPage<HomeProps> = () => {
         <button className="my-8 flex gap-4 rounded-sm bg-color-yellow px-12 py-4 tracking-tighter text-color-black">
           <p>Learn More</p>
         </button>
-        <div className="my-16 h-[1px] w-full bg-color-white" />
       </MainLayout>
     </>
   );

@@ -11,6 +11,7 @@ type Props = {
 
 function SuccessCard({ image, headline, pharagraph }: Props) {
   const [showText, setShowText] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   const handleImageClick = () => {
     setShowText(!showText);
@@ -18,10 +19,15 @@ function SuccessCard({ image, headline, pharagraph }: Props) {
 
   return (
     <div>
-      <div onClick={handleImageClick} className="relative flex flex-col">
+      <div 
+        onClick={handleImageClick} 
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        className="relative flex flex-col cursor-pointer"
+      >
         <div
-          className={`absolute inset-0 rounded-lg bg-black transition-opacity ${
-            showText ? "opacity-90" : "opacity-0"
+          className={`absolute inset-0 rounded-lg bg-black transition-opacity duration-500 ${
+            showText ? "opacity-90" : isHovered ? "opacity-50" : "opacity-0"
           }`}
         />
         <Image
@@ -30,6 +36,11 @@ function SuccessCard({ image, headline, pharagraph }: Props) {
           quality={100}
           className="rounded-xl object-cover"
         />
+        {isHovered && !showText && (
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <p className="text-white font-bold">Click to Read Story</p>
+          </div>
+        )}
         {showText && (
           <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-sm text-center tracking-normal">
             <h3 className="text-white">{headline}</h3>
