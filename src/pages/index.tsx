@@ -19,17 +19,17 @@ const textVariants = {
   visible: { opacity: 1, x: 0, transition: { duration: 0.7 } },
   hidden2: { opacity: 0, x: "100vw" },
   visible2: { opacity: 1, x: 0, transition: { duration: 0.9 } },
+  hidden3: { opacity: 0, y: "0vh" },
+  visible3: { opacity: 1, y: 0, transition: { duration: 0.45 } },
 };
 
 type HomeProps = {};
 
 const Home: NextPage<HomeProps> = () => {
-
   const { scrollY } = useViewportScroll();
-  const xPosition1 = useTransform(scrollY, [300, 50], ['-70vw', '0vw']);
-  const xPosition2 = useTransform(scrollY, [300, 50], ['70vw', '0vw']);
-
-
+  const xPosition1 = useTransform(scrollY, [300, 50], ["-70vw", "0vw"]);
+  const xPosition2 = useTransform(scrollY, [300, 50], ["70vw", "0vw"]);
+  const yPosition3 = useTransform(scrollY, [300, 50], ["-100vh", "0vh"]);
 
   return (
     <>
@@ -40,6 +40,13 @@ const Home: NextPage<HomeProps> = () => {
       </Head>
       <MainLayout>
         <div className="relative flex min-h-screen flex-col items-start overflow-hidden">
+          <motion.div
+            style={{ y: yPosition3 }}
+            variants={textVariants}
+            initial="hidden3"
+            animate="visible3"
+            className="gradient-circle"
+          />
           <motion.h1
             style={{ x: xPosition1 }}
             variants={textVariants}
