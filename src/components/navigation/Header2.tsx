@@ -42,7 +42,13 @@ const Header2: React.FC<Header2Props> = () => {
   // This function adds or removes a class from the body when the menu is open or closed
 
   return (
-    <header className="sticky top-0 z-10 mx-4 flex items-center border-b border-color-white bg-color-black py-4 text-color-white">
+    <header className="sticky top-0 z-10 mx-4 flex items-center bg-color-black py-4 text-color-white">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 0.5 }}
+        className="absolute top-20 h-[1px] w-full bg-color-white"
+      />
       <motion.button
         className="z-30"
         onClick={handleToggle}
