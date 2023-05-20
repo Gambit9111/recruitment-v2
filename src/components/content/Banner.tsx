@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, AnimateSharedLayout } from 'framer-motion';
 
 type Section = {
   title: string;
@@ -56,11 +57,14 @@ const Banner: React.FC = () => {
             </div>
             <div className={`h-14 w-14 rounded-full ${section.color}`} />
           </div>
-          {expandedSection === index && (
-            <div className="mt-4 mb-4 text-color-white">
-              {section.content}
-            </div>
-          )}
+          <motion.div
+            className="overflow-hidden"
+            initial={{ height: 0 }}
+            animate={{ height: expandedSection === index ? "auto" : 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <p className="px-6 py-4 text-color-white">{section.content}</p>
+          </motion.div>
           <div className="h-[1px] w-full bg-color-white" />
         </React.Fragment>
       ))}
