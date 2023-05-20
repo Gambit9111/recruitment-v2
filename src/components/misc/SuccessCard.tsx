@@ -11,7 +11,6 @@ type Props = {
 
 function SuccessCard({ image, headline, pharagraph }: Props) {
   const [showText, setShowText] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
 
   const handleImageClick = () => {
     setShowText(!showText);
@@ -19,30 +18,21 @@ function SuccessCard({ image, headline, pharagraph }: Props) {
 
   return (
     <div>
-      <div 
-        onClick={handleImageClick} 
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        className="relative flex flex-col cursor-pointer"
-      >
-        <div
-          className={`absolute inset-0 rounded-lg bg-black transition-opacity duration-500 ${
-            showText ? "opacity-90" : isHovered ? "opacity-50" : "opacity-0"
-          }`}
-        />
+      <div onClick={handleImageClick} className="relative flex flex-col cursor-pointer">
         <Image
           src={image}
           alt="success11"
           quality={100}
           className="rounded-xl object-cover"
         />
-        {isHovered && !showText && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <p className="text-white font-bold">Click to Read Story</p>
-          </div>
-        )}
+        {/* Sticker div with SVG */}
+        <div className="absolute top-0 left-0 w-12 h-12 p-1 flex items-center justify-center bg-color-yellow/20 rounded-tl-xl rounded-br-xl">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#FFD95A" strokeWidth="1" strokeOpacity="0.8">
+            <path d="M12 6v12M6 12h12" />
+          </svg>
+        </div>
         {showText && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-sm text-center tracking-normal">
+          <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-sm text-center tracking-normal bg-black opacity-90">
             <h3 className="text-white">{headline}</h3>
             <p className="text-white">{pharagraph}</p>
           </div>
