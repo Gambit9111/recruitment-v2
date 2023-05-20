@@ -13,6 +13,8 @@ import { motion, useViewportScroll, useTransform } from "framer-motion";
 
 import SuccessCard from "@/components/misc/SuccessCard";
 
+import Banner from "@/components/content/Banner";
+
 // Animation Variants
 const textVariants = {
   hidden: { opacity: 0, x: "-100vw" },
@@ -131,56 +133,7 @@ const Home: NextPage<HomeProps> = () => {
           <button className="mt-8 flex gap-4 rounded-sm bg-color-yellow px-12 py-4 tracking-tighter text-color-black">
             <p>Learn More</p>
           </button>
-          <div className="mt-24 flex w-full flex-col gap-6">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <h3>01</h3>
-                <h1 className="text-xl">Talent Acquisition </h1>
-              </div>
-              <div className="h-14 w-14 rounded-full bg-red-500" />
-            </div>
-            <div className="h-[1px] w-full bg-color-white" />
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <h3>02</h3>
-                <h1 className="text-xl">Technical Skillset Matching</h1>
-              </div>
-              <div className="h-14 w-14 rounded-full bg-green-500" />
-            </div>
-            <div className="h-[1px] w-full bg-color-white" />
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <h3>03</h3>
-                <h1 className="text-xl">Remote Workforce Planning</h1>
-              </div>
-              <div className="h-14 w-14 rounded-full bg-teal-500" />
-            </div>
-            <div className="h-[1px] w-full bg-color-white" />
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <h3>04</h3>
-                <h1 className="text-xl">Candidate Skill Analysis</h1>
-              </div>
-              <div className="h-14 w-14 rounded-full bg-blue-500" />
-            </div>
-            <div className="h-[1px] w-full bg-color-white" />
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <h3>05</h3>
-                <h1 className="text-xl">Business & HR Management</h1>
-              </div>
-              <div className="h-14 w-14 rounded-full bg-yellow-500" />
-            </div>
-            <div className="h-[1px] w-full bg-color-white" />
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <h3>06</h3>
-                <h1 className="text-xl">IT & Tech Recruiting</h1>
-              </div>
-              <div className="h-14 w-14 rounded-full bg-orange-500" />
-            </div>
-            <div className="h-[1px] w-full bg-color-white" />
-          </div>
+          <Banner />
           <h1 className="mt-24 text-lg font-bold">
             --"In our firm's initial years, Engnr quickly scaled its operations
             by employing smart and innovative strategies to aid our clients in
