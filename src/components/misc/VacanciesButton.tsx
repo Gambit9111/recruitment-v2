@@ -1,8 +1,22 @@
 type VacanciesButtonProps = {};
 
+import React, { useEffect, useState } from 'react';
+import { motion, useSpring } from 'framer-motion';
+
+const variants = {
+  hidden: { opacity: 0, x: 100 },
+  visible: { opacity: 1, x: 0 },
+}
+
 const VacanciesButton: React.FC<VacanciesButtonProps> = () => {
   return (
-    <button className="mt-8 flex gap-4 rounded-sm border border-color-white/30 px-4 py-4">
+    <motion.button
+    className="mt-8 flex gap-4 rounded-sm border border-color-white/30 px-4 py-4"
+    variants={variants}
+    initial="hidden"
+    animate="visible"
+    exit="exit"
+  >
       <svg
         width="24"
         height="24"
@@ -19,7 +33,7 @@ const VacanciesButton: React.FC<VacanciesButtonProps> = () => {
         />
       </svg>
       <p>Our Vacancies</p>
-    </button>
+    </motion.button>
   );
 };
 
