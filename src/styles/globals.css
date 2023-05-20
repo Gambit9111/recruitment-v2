@@ -20,11 +20,11 @@ body {
 
   .gradient-circle {
     position: fixed;
-    top: -100px;  /* Adjust according to your needs */
-    right: -100px;  /* Adjust according to your needs */
+    top: -150px;  /* Adjust according to your needs */
+    right: -150px;  /* Adjust according to your needs */
     width: 300px;
     height: 300px;
     z-index: 40;
-    background: radial-gradient(circle, rgba(214, 132, 9, 0.2) 0%, rgba(196, 97, 4, 0) 60%);
+    background: radial-gradient(circle, rgba(255, 238, 0, 0.2) 0%, rgba(255, 208, 0, 0) 30%);
     pointer-events: none;
   }
