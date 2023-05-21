@@ -67,9 +67,9 @@ const Header2: React.FC<Header2Props> = () => {
             <path
               d="M8 18L24 6M8 6L24 18"
               stroke="#F6F2EC"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         ) : (
@@ -83,9 +83,9 @@ const Header2: React.FC<Header2Props> = () => {
             <path
               d="M5 9H27M5 15.75H27"
               stroke="#F6F2EC"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         )}
