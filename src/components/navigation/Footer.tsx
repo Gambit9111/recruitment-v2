@@ -3,12 +3,13 @@ import Link from "next/link";
 
 type FooterProps = {};
 
+
 const Footer: React.FC<FooterProps> = () => {
   return (
-    <footer className="bg-color-black">
+    <footer className="bg-color-black relative overflow-hidden">
       <div className="mb-8 mt-16 h-[1px] w-full bg-color-white" />
       <div className="flex">
-        <div className="ml-4 flex w-12 flex-col items-center gap-8 pb-16">
+        <div className="ml-4 flex w-12 flex-col items-center gap-8 pb-8">
           <div className="flex h-12 w-12 items-center justify-center rounded-full border-[1.5px] border-color-white">
             <p className="text-[0.55rem] font-medium uppercase tracking-wider">
               Engnr.
@@ -72,7 +73,7 @@ const Footer: React.FC<FooterProps> = () => {
           </svg>
         </div>
         <div className="space-y-8">
-          <div className="flex w-full flex-col px-8 pt-4 font-light uppercase">
+          <div className="flex w-full flex-col px-8 pt-2 font-light uppercase">
             <h1 className="pb-2 text-color-white/80">Contact</h1>
             <div className="space-y-1 text-sm tracking-normal text-color-white/50">
               <h2>Customer Service</h2>
@@ -92,9 +93,12 @@ const Footer: React.FC<FooterProps> = () => {
           </div>
         </div>
       </div>
-      <p className="text-[0.6rem] font-medium uppercase tracking-wider text-center p-1 text-color-yellow/30">
+      <p className="text-[0.6rem] font-medium uppercase tracking-wider text-center ml-6 p-1 text-color-yellow/30">
         Engnr. © 2023
       </p>
+      <div
+            className="gradient-circle-footer"
+          />
       {/* <div>
       <p className='text-center'>© 2023 Engnr</p>
       <p className="hidden md:block">Contact: info@engnr.com</p>

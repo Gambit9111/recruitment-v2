@@ -25,7 +25,17 @@ body {
     width: 300px;
     height: 300px;
     z-index: 40;
-    background: radial-gradient(circle, rgba(255, 238, 0, 0.2) 0%, rgba(255, 208, 0, 0) 30%);
+    background: radial-gradient(circle, #ffbb0063 0%, #FFD00000 30%);
+    pointer-events: none;
+  }
+
+  .gradient-circle-footer {
+    position: absolute;
+    bottom: -210px;  /* Adjust according to your needs */
+    right: -210px;  /* Adjust according to your needs */
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, #ffbb0063 0%, #FFD00000 30%);
     pointer-events: none;
   }
 

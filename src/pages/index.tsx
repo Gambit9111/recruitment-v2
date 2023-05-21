@@ -11,7 +11,12 @@ import construction6 from "../../public/images/construction6.png";
 
 import React, { useState, useEffect } from "react";
 
-import { motion, useViewportScroll, useTransform, useScroll } from "framer-motion";
+import {
+  motion,
+  useViewportScroll,
+  useTransform,
+  useScroll,
+} from "framer-motion";
 
 import SuccessCard from "@/components/misc/SuccessCard";
 
@@ -38,7 +43,6 @@ const Home: NextPage<HomeProps> = () => {
 
   const xPosition4 = useTransform(scrollY, [400, 10], ["0vw", "100vw"]);
   const opacityValue1 = useTransform(scrollY, [400, 10], [1, 0]);
-
 
   useEffect(() => {
     const onScroll = () => {
@@ -111,10 +115,11 @@ const Home: NextPage<HomeProps> = () => {
             <p>Our Vacancies</p>
           </motion.button>
           <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.2, duration: 0.5 }}
-          className="mt-8 flex w-full items-center gap-4">
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2, duration: 0.5 }}
+            className="mt-8 flex w-full items-center gap-4"
+          >
             <div className="h-[1px] w-full bg-color-white" />
             <svg
               width="50"
@@ -143,11 +148,12 @@ const Home: NextPage<HomeProps> = () => {
             We're not your average recruiting firm.
           </motion.h1>
           <motion.h2
-                    style={{ opacity: opacityValue1 }}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: hasScrolled ? 1 : 0 }}
-                    transition={{ duration: 0.5 }}
-          className="mt-8 pr-10 tracking-tighter">
+            style={{ opacity: opacityValue1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: hasScrolled ? 1 : 0 }}
+            transition={{ duration: 0.5 }}
+            className="mt-8 pr-10 tracking-tighter"
+          >
             Since 2011, Engnr. has been pivotal in crafting successful careers
             and shaping the future of work. Our team, with its rich and diverse
             background, excels in both corporate recruitment and independent

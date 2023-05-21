@@ -110,7 +110,7 @@ const Header2: React.FC<Header2Props> = () => {
             exit={{ y: "-100%" }}
             transition={{ duration: 0.5 }}
           >
-            <ul className="space-y-8 p-4 pt-16 text-3xl font-light uppercase text-color-white/50">
+            <ul className="space-y-4 p-4 pt-16 text-3xl font-light uppercase text-color-white/50">
               {links.map((link, i) => (
                 <motion.li
                   key={link.href}
