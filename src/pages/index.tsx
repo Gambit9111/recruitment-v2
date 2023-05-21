@@ -110,7 +110,11 @@ const Home: NextPage<HomeProps> = () => {
             </svg>
             <p>Our Vacancies</p>
           </motion.button>
-          <div className="mt-8 flex w-full items-center gap-4">
+          <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.2, duration: 0.5 }}
+          className="mt-8 flex w-full items-center gap-4">
             <div className="h-[1px] w-full bg-color-white" />
             <svg
               width="50"
@@ -128,7 +132,7 @@ const Home: NextPage<HomeProps> = () => {
               />
               <circle cx="25" cy="25" r="24.5" stroke="#F6F2EC" />
             </svg>
-          </div>
+          </motion.div>
           <motion.h1
             style={{ x: xPosition4 }}
             initial={{ opacity: 0 }}
