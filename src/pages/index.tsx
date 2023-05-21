@@ -44,6 +44,11 @@ const Home: NextPage<HomeProps> = () => {
   const xPosition4 = useTransform(scrollY, [400, 10], ["0vw", "100vw"]);
   const opacityValue1 = useTransform(scrollY, [400, 10], [1, 0]);
 
+  const [count, setCount] = useState(1);
+  const maxCount = 113;
+  const [intervalTime, setIntervalTime] = useState(250);
+
+
   useEffect(() => {
     const onScroll = () => {
       if (!hasScrolled && window.pageYOffset > 0) {
@@ -54,6 +59,16 @@ const Home: NextPage<HomeProps> = () => {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, [hasScrolled]);
+
+  useEffect(() => {
+    if (hasScrolled && count < maxCount) {
+      const id = setTimeout(() => {
+        setCount(count + 1);
+        setIntervalTime(Math.max(10, intervalTime - 10)); // reduce time by 10ms each second, but not less than 10ms
+      }, intervalTime);
+      return () => clearTimeout(id);
+    }
+  }, [count, hasScrolled, intervalTime]);
 
   return (
     <>
@@ -160,21 +175,19 @@ const Home: NextPage<HomeProps> = () => {
             talent scouting, fusing our savvy and practicality to deliver
             extraordinary employment opportunities for our clients.
           </motion.h2>
-          <span className="flex gap-4">
-            <p className="text-[10rem] tracking-[-0.15em]">$1B</p>
-            <p className="text-[10rem] tracking-[-0.15em]">+</p>
-          </span>
+            <h3 className="text-6xl pt-16">{count}</h3>
+            <h4 className="text-3xl font-bold uppercase tracking-tighter text-color-yellow/80">Active Talents</h4>
           <h2 className="pr-16 tracking-tighter">
             Supporting a Wide Range of Employers and Job Seekers, from Startups
             to Fortune 500 Companies.
           </h2>
           <div className="my-16 grid grid-cols-2 tracking-tighter">
             <div className="pr-2">
-              <h1 className="text-6xl">98%</h1>
+              <h1 className="text-6xl">93%</h1>
               <h2 className="text-sm">Employee Retention Rate</h2>
             </div>
             <div className="pr-2">
-              <h1 className="text-6xl">$3B</h1>
+              <h1 className="text-6xl">$1M</h1>
               <h2 className="text-sm">Achieved $3B in Customer Cost Savings</h2>
             </div>
             <div className="pr-2">
