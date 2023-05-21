@@ -1,5 +1,7 @@
 import { type Config } from "tailwindcss";
 
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 export default {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -24,6 +26,10 @@ export default {
         '1920p': '1920px',
         '2560p': '2560px',
         // Add more custom screen sizes if needed
+      },
+
+      fontFamily: {
+        "Archivo": ["Archivo", ...defaultTheme.fontFamily.sans],
       },
     },
   },
