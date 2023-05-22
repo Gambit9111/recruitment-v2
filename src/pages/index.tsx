@@ -8,6 +8,7 @@ import aircraft3 from "../../public/images/aircraft3.png";
 import factory4 from "../../public/images/factory4.png";
 import warehouse5 from "../../public/images/warehouse5.png";
 import construction6 from "../../public/images/construction6.png";
+import Link from "next/link";
 
 import React, { useState, useEffect } from "react";
 
@@ -107,7 +108,7 @@ const Home: NextPage<HomeProps> = () => {
           </motion.h2>
           <motion.button
             style={{ x: xPosition1 }}
-            className="mt-8 flex gap-4 rounded-sm border border-color-white/30 px-4 py-4"
+            className="mt-8 flex gap-4 rounded-sm border border-color-white/30 px-4 py-4 hover:bg-color-yellow/20"
             variants={textVariants}
             initial="hidden"
             animate="visible"
@@ -127,7 +128,7 @@ const Home: NextPage<HomeProps> = () => {
                 strokeLinejoin="round"
               />
             </svg>
-            <p>Our Vacancies</p>
+            <Link href="/vacancies">Our Vacancies</Link>
           </motion.button>
           <motion.div
             initial={{ opacity: 0 }}
