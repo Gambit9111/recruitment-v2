@@ -48,7 +48,6 @@ const Home: NextPage<HomeProps> = () => {
   const maxCount = 113;
   const [intervalTime, setIntervalTime] = useState(250);
 
-
   useEffect(() => {
     const onScroll = () => {
       if (!hasScrolled && window.pageYOffset > 0) {
@@ -175,13 +174,41 @@ const Home: NextPage<HomeProps> = () => {
             talent scouting, fusing our savvy and practicality to deliver
             extraordinary employment opportunities for our clients.
           </motion.h2>
-            <h3 className="text-6xl pt-16">{count}</h3>
-            <h4 className="text-3xl font-bold uppercase tracking-tighter text-color-yellow/80">Active Talents</h4>
-          <h2 className="pr-16 tracking-tighter">
+          <motion.h3
+            style={{ opacity: opacityValue1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: hasScrolled ? 1 : 0 }}
+            transition={{ duration: 0.5 }}
+            className="pt-16 text-6xl"
+          >
+            {count}
+          </motion.h3>
+          <motion.h4
+            style={{ opacity: opacityValue1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: hasScrolled ? 1 : 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl font-bold uppercase tracking-tighter text-color-yellow/80"
+          >
+            Active Talents
+          </motion.h4>
+          <motion.h2
+            style={{ opacity: opacityValue1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: hasScrolled ? 1 : 0 }}
+            transition={{ duration: 0.5 }}
+            className="pr-16 tracking-tighter"
+          >
             Supporting a Wide Range of Employers and Job Seekers, from Startups
             to Fortune 500 Companies.
-          </h2>
-          <div className="my-16 grid grid-cols-2 tracking-tighter">
+          </motion.h2>
+          <motion.div
+            style={{ opacity: opacityValue1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: hasScrolled ? 1 : 0 }}
+            transition={{ duration: 0.5 }}
+            className="my-16 grid grid-cols-2 tracking-tighter"
+          >
             <div className="pr-2">
               <h1 className="text-6xl">93%</h1>
               <h2 className="text-sm">Employee Retention Rate</h2>
@@ -194,7 +221,7 @@ const Home: NextPage<HomeProps> = () => {
               <h1 className="text-6xl">97%</h1>
               <h2 className="text-sm">Customer Satisfaction Rating</h2>
             </div>
-          </div>
+          </motion.div>
           <div className="h-[1px] w-full bg-color-white" />
           {/* Service Pillars */}
           <h1 className="mt-16 text-2xl font-medium tracking-tighter ">
