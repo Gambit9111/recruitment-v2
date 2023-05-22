@@ -41,7 +41,7 @@ const sections: Section[] = [
 ];
 
 const Banner: React.FC = () => {
-  const [expandedSection, setExpandedSection] = useState<number | null>(null);
+  const [expandedSection, setExpandedSection] = useState<number | null>(0);
 
   return (
     <div className="mt-24 flex w-full flex-col">
