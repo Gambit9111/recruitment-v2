@@ -42,6 +42,7 @@ const Home: NextPage<HomeProps> = () => {
   const yPosition3 = useTransform(scrollY, [300, 100], ["-100vh", "0vh"]);
 
   const xPosition4 = useTransform(scrollY, [350, 10], ["0vw", "100vw"]);
+  const xPosition5 = useTransform(scrollY, [450, 10], ["0vw", "100vw"]);
   const opacityValue1 = useTransform(scrollY, [400, 10], [1, 0]);
 
   const [count, setCount] = useState(1);
