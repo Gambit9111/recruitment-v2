@@ -213,15 +213,15 @@ const Home: NextPage<HomeProps> = () => {
           >
             <div className="pr-2">
               <h1 className="text-6xl">93%</h1>
-              <h2 className="text-sm">Employee Retention Rate</h2>
+              <h2 className="text-sm text-color-white/80">Employee Retention Rate</h2>
             </div>
             <div className="pr-2">
               <h1 className="text-6xl">$1M</h1>
-              <h2 className="text-sm">Achieved $3B in Customer Cost Savings</h2>
+              <h2 className="text-sm text-color-white/80">Achieved $1M in Customer Cost Savings</h2>
             </div>
             <div className="pr-2">
               <h1 className="text-6xl">97%</h1>
-              <h2 className="text-sm">Customer Satisfaction Rating</h2>
+              <h2 className="text-sm text-color-white/80">Customer Satisfaction Rating</h2>
             </div>
           </motion.div>
           <div className="h-[1px] w-full bg-color-white" />
@@ -229,23 +229,23 @@ const Home: NextPage<HomeProps> = () => {
           <h1 className="mt-16 text-2xl font-medium tracking-tighter ">
             Service Pillars
           </h1>
-          <h2 className="mt-2 pr-10 tracking-tighter">
+          <h2 className="mt-2 pr-10 tracking-tighter text-color-white/80">
             Success comes from creating meaningful relationships with our
             clients and candidates, considering ourselves as an integral part of
             your professional journey.
           </h2>
-          <button className="mt-8 flex gap-4 rounded-sm bg-color-yellow px-12 py-4 tracking-tighter text-color-black">
-            <p>Learn More</p>
+          <button className="mt-8 flex gap-4 rounded-sm bg-color-yellow px-12 py-4 tracking-tighter text-color-black hover:bg-color-yellow/20 hover:text-color-white">
+            <Link href="/about-us"><p>Learn More</p></Link>
           </button>
           <Banner />
           <h1 className="mt-24 text-lg font-bold">
-            --"In our firm's initial years, Engnr quickly scaled its operations
+            <span className="text-color-yellow pr-1">"</span>In our firm's initial years, Engnr quickly scaled its operations
             by employing smart and innovative strategies to aid our clients in
             landing their dream jobs. Now, leveraging that experience, we are
             set to broaden our reach to additional job markets, persistently
-            delivering top-notch services in the years to come."
+            delivering top-notch services in the years to come.<span className="text-color-yellow pl-1">"</span>
           </h1>
-          <h2 className="mt-8">Curtis Porter, President</h2>
+          <h2 className="mt-4 text-color-white/80">Curtis Porter, President</h2>
           <div className="my-16 h-[1px] w-full bg-color-white" />
         </div>
         {/* Success stories */}
@@ -286,9 +286,9 @@ const Home: NextPage<HomeProps> = () => {
           Celebrating a decade of thought leadership, innovation and client
           partnerships.
         </h1>
-        <button className="my-8 flex gap-4 rounded-sm bg-color-yellow px-12 py-4 tracking-tighter text-color-black">
-          <p>Learn More</p>
-        </button>
+        <button className="mt-8 flex gap-4 rounded-sm bg-color-yellow px-12 py-4 tracking-tighter text-color-black hover:bg-color-yellow/20 hover:text-color-white">
+            <Link href="/about-us"><p>Learn More</p></Link>
+          </button>
       </MainLayout>
     </>
   );

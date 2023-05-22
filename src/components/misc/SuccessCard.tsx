@@ -47,9 +47,9 @@ function SuccessCard({ image, headline, pharagraph }: Props) {
           </svg>
         </div>
         {showText && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-black p-4 text-center text-sm tracking-normal opacity-90">
-            <h3 className="text-white">{headline}</h3>
-            <p className="text-white">{pharagraph}</p>
+          <div className="absolute inset-0 flex flex-col justify-around bg-black rounded-xl p-3 text-center tracking-normal opacity-90">
+            <h3 className="text-color-yellow uppercase text-center">{headline}</h3>
+            <p className="text-color-white/80 text-sm">{pharagraph}</p>
           </div>
         )}
       </div>

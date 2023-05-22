@@ -96,9 +96,11 @@ const Header2: React.FC<Header2Props> = () => {
         animate={{ x: 0, opacity: 1 }}
         transition={{ delay: 1.1, duration: 0.5 }}
       >
+        <Link href="/">
         <p className="text-[0.55rem] font-medium uppercase tracking-wider">
           Engnr.
         </p>
+        </Link>
       </motion.div>
 
       <AnimatePresence>

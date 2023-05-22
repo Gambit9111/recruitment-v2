@@ -63,7 +63,7 @@ const Banner: React.FC = () => {
             animate={{ height: expandedSection === index ? "auto" : 0 }}
             transition={{ duration: 0.3 }}
           >
-            <p className="p-2 text-color-white">{section.content}</p>
+            <p className="p-2 text-color-white/80">{section.content}</p>
           </motion.div>
           <div className="h-[1px] w-full bg-color-white" />
         </React.Fragment>
