@@ -106,9 +106,9 @@ const Home: NextPage<HomeProps> = () => {
             Discover. Connect. Empower. Merging intuition and innovation to
             achieve exceptional talent solutions.
           </motion.h2>
-          <motion.button
+          <motion.span
             style={{ x: xPosition1 }}
-            className="mt-8 flex gap-4 rounded-sm border border-color-white/30 px-4 py-4 hover:bg-color-yellow/20"
+            className="mt-8 flex gap-4 rounded-sm border border-color-white/30 px-4 py-4 hover:bg-color-yellow/20 focus:bg-color-yellow/20"
             variants={textVariants}
             initial="hidden"
             animate="visible"
@@ -129,7 +129,7 @@ const Home: NextPage<HomeProps> = () => {
               />
             </svg>
             <Link href="/vacancies">Our Vacancies</Link>
-          </motion.button>
+          </motion.span>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -213,15 +213,21 @@ const Home: NextPage<HomeProps> = () => {
           >
             <div className="pr-2">
               <h1 className="text-6xl">93%</h1>
-              <h2 className="text-sm text-color-white/80">Employee Retention Rate</h2>
+              <h2 className="text-sm text-color-white/80">
+                Employee Retention Rate
+              </h2>
             </div>
             <div className="pr-2">
               <h1 className="text-6xl">$1M</h1>
-              <h2 className="text-sm text-color-white/80">Achieved $1M in Customer Cost Savings</h2>
+              <h2 className="text-sm text-color-white/80">
+                Achieved $1M in Customer Cost Savings
+              </h2>
             </div>
             <div className="pr-2">
               <h1 className="text-6xl">97%</h1>
-              <h2 className="text-sm text-color-white/80">Customer Satisfaction Rating</h2>
+              <h2 className="text-sm text-color-white/80">
+                Customer Satisfaction Rating
+              </h2>
             </div>
           </motion.div>
           <div className="h-[1px] w-full bg-color-white" />
@@ -234,16 +240,20 @@ const Home: NextPage<HomeProps> = () => {
             clients and candidates, considering ourselves as an integral part of
             your professional journey.
           </h2>
-          <button className="mt-8 flex gap-4 rounded-sm bg-color-yellow px-12 py-4 tracking-tighter text-color-black hover:bg-color-yellow/20 hover:text-color-white">
-            <Link href="/about-us"><p>Learn More</p></Link>
-          </button>
+          <span className="mt-8 flex gap-4 rounded-sm bg-color-yellow px-12 py-4 tracking-tighter text-color-black hover:bg-color-yellow/20 hover:text-color-white">
+            <Link href="/about-us">
+              <p>Learn More</p>
+            </Link>
+          </span>
           <Banner />
           <h1 className="mt-24 text-lg font-bold">
-            <span className="text-color-yellow pr-1">"</span>In our firm's initial years, Engnr quickly scaled its operations
-            by employing smart and innovative strategies to aid our clients in
-            landing their dream jobs. Now, leveraging that experience, we are
-            set to broaden our reach to additional job markets, persistently
-            delivering top-notch services in the years to come.<span className="text-color-yellow pl-1">"</span>
+            <span className="pr-1 text-color-yellow">"</span>In our firm's
+            initial years, Engnr quickly scaled its operations by employing
+            smart and innovative strategies to aid our clients in landing their
+            dream jobs. Now, leveraging that experience, we are set to broaden
+            our reach to additional job markets, persistently delivering
+            top-notch services in the years to come.
+            <span className="pl-1 text-color-yellow">"</span>
           </h1>
           <h2 className="mt-4 text-color-white/80">Curtis Porter, President</h2>
           <div className="my-16 h-[1px] w-full bg-color-white" />
@@ -287,8 +297,10 @@ const Home: NextPage<HomeProps> = () => {
           partnerships.
         </h1>
         <button className="mt-8 flex gap-4 rounded-sm bg-color-yellow px-12 py-4 tracking-tighter text-color-black hover:bg-color-yellow/20 hover:text-color-white">
-            <Link href="/about-us"><p>Learn More</p></Link>
-          </button>
+          <Link href="/about-us">
+            <p>Learn More</p>
+          </Link>
+        </button>
       </MainLayout>
     </>
   );
