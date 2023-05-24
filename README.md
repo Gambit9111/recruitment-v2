@@ -1,8 +1,8 @@
 TODO
 
-a) refactor the code and start adding comments before its too late :c
+<!-- a) refactor the code and start adding comments before its too late :c  -->
 
-1) Change vacancies page from server rendered to client rendered, getServerSideProps makes the page load slowly, so I need to fetch data after the initial page loads and add a loading animation
+<!-- 1) Change vacancies page from server rendered to client rendered, getServerSideProps makes the page load slowly, so I need to fetch data after the initial page loads and add a loading animation -->
 
 2) Add icons to the service pillars section
 
