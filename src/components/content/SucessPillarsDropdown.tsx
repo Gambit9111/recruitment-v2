@@ -40,7 +40,7 @@ const sections: Section[] = [
   },
 ];
 
-const Banner: React.FC = () => {
+const SucessPillarsDropdown: React.FC = () => {
   const [expandedSection, setExpandedSection] = useState<number | null>(0);
 
   return (
@@ -72,4 +72,4 @@ const Banner: React.FC = () => {
   );
 };
 
-export default Banner;
+export default SucessPillarsDropdown;

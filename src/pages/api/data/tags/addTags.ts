@@ -1,6 +1,13 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { prisma } from '@/server/db'
 
+// * add tags to the vacancies, send post request with json format like this
+
+// ? {
+// ?   "vacancyTitle": "Carpenter",
+// ?   "tagNames": ["Car Provided", "Accommodation Provided", "Driving License Required", "40 Hours per week", "Construction Work", "Day Shift", "Qualified Position"]
+// ? }
+
 const addTags = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {
     try {

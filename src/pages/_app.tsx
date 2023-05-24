@@ -6,24 +6,24 @@ const archivo = Archivo({ subsets: ["latin"] });
 
 import "@/styles/globals.css";
 
+// router needed to capcure route change
 import { useRouter } from "next/router";
 
-// @ts-ignore
+
 const MyApp: AppType = ({ Component, pageProps }) => {
   const router = useRouter();
 
   return (
+
+    // * makes the page fade out / fade in during route change
+    
     <AnimatePresence mode="wait">
-      <motion.main
+      <motion.span
         key={router.route}
         className={archivo.className}
         initial="pageInitial"
         animate="pageAnimate"
         exit="pageExit"
-        // transition={{
-        //   duration: 5, // Duration for the entry animation
-        //   exit: 0.5, // Duration for the exit animation
-        // }}
         variants={{
           pageInitial: {
             opacity: 0,
@@ -40,7 +40,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
         }}
       >
         <Component {...pageProps} />
-      </motion.main>
+      </motion.span>
     </AnimatePresence>
   );
 };

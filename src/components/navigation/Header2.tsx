@@ -20,6 +20,8 @@ const Header2: React.FC<Header2Props> = () => {
     setIsOpen(!isOpen);
   };
 
+  // TODO find a different wy to do this
+  // ? prevents the page to be scrolled down when the header menu is active, prevents to scroll down to see the bottom of the footer which i put in the menu
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -28,6 +30,7 @@ const Header2: React.FC<Header2Props> = () => {
     }
   }, [isOpen]);
 
+  
   const variants = {
     // @ts-ignore
     open: (i) => ({
@@ -38,8 +41,6 @@ const Header2: React.FC<Header2Props> = () => {
     }),
     closed: { opacity: 0 },
   };
-
-  // This function adds or removes a class from the body when the menu is open or closed
 
   return (
     <header className="sticky top-0 z-10 mx-4 flex items-center bg-color-black py-4 text-color-white">

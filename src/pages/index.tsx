@@ -1,7 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import MainLayout from "@/components/layouts/MainLayout";
-import VacanciesButton from "@/components/misc/VacanciesButton";
 import welder1png from "../../public/images/welder1.png";
 import warehouse2png from "../../public/images/warehouse2.png";
 import aircraft3 from "../../public/images/aircraft3.png";
@@ -14,14 +13,15 @@ import React, { useState, useEffect } from "react";
 
 import {
   motion,
-  useViewportScroll,
   useTransform,
   useScroll,
 } from "framer-motion";
 
-import SuccessCard from "@/components/misc/SuccessCard";
 
-import Banner from "@/components/content/Banner";
+
+import SuccessCard from "@/components/misc/SuccessCard";
+import SucessPillarsDropdown from "@/components/content/SucessPillarsDropdown";
+import ActiveWorkers from "@/components/content/ActiveWorkers";
 
 // Animation Variants
 const textVariants = {
@@ -36,20 +36,19 @@ const textVariants = {
 type HomeProps = {};
 
 const Home: NextPage<HomeProps> = () => {
-  const { scrollY } = useScroll();
-  const [hasScrolled, setHasScrolled] = useState(false);
+  const { scrollY } = useScroll();  // * checks the page scroll status in some value
+  const [hasScrolled, setHasScrolled] = useState(false);  // * true after page has been scrolled
+
+
+  // TODO refactor animations, these are pretty random
   const xPosition1 = useTransform(scrollY, [300, 10], ["-70vw", "0vw"]);
   const xPosition2 = useTransform(scrollY, [300, 10], ["70vw", "0vw"]);
   const yPosition3 = useTransform(scrollY, [300, 100], ["-100vh", "0vh"]);
-
   const xPosition4 = useTransform(scrollY, [350, 10], ["0vw", "100vw"]);
   const xPosition5 = useTransform(scrollY, [400, 10], ["0vw", "100vw"]);
   const opacityValue1 = useTransform(scrollY, [400, 10], [1, 0]);
 
-  const [count, setCount] = useState(1);
-  const maxCount = 113;
-  const [intervalTime, setIntervalTime] = useState(250);
-
+  // * checks if the page has been scrolled
   useEffect(() => {
     const onScroll = () => {
       if (!hasScrolled && window.pageYOffset > 0) {
@@ -61,15 +60,6 @@ const Home: NextPage<HomeProps> = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, [hasScrolled]);
 
-  useEffect(() => {
-    if (hasScrolled && count < maxCount) {
-      const id = setTimeout(() => {
-        setCount(count + 1);
-        setIntervalTime(Math.max(10, intervalTime - 10)); // reduce time by 10ms each second, but not less than 10ms
-      }, intervalTime);
-      return () => clearTimeout(id);
-    }
-  }, [count, hasScrolled, intervalTime]);
 
   return (
     <>
@@ -80,6 +70,7 @@ const Home: NextPage<HomeProps> = () => {
       </Head>
       <MainLayout>
         <div className="relative flex min-h-screen flex-col items-start overflow-hidden">
+          {/* navbar gradient */}
           <motion.div
             style={{ y: yPosition3 }}
             variants={textVariants}
@@ -87,6 +78,8 @@ const Home: NextPage<HomeProps> = () => {
             animate="visible3"
             className="gradient-circle"
           />
+
+
           <motion.h1
             style={{ x: xPosition1 }}
             variants={textVariants}
@@ -96,6 +89,8 @@ const Home: NextPage<HomeProps> = () => {
           >
             Big Goals? When Results matter, Engnr. Delivers.
           </motion.h1>
+
+
           <motion.h2
             style={{ x: xPosition2 }}
             variants={textVariants}
@@ -106,6 +101,8 @@ const Home: NextPage<HomeProps> = () => {
             Discover. Connect. Empower. Merging intuition and innovation to
             achieve exceptional talent solutions.
           </motion.h2>
+
+          {/* Our Vacancies button */}
           <motion.span
             style={{ x: xPosition1 }}
             className="mt-8 flex gap-4 rounded-sm border border-color-white/30 px-4 py-4 hover:bg-color-yellow/20 focus:bg-color-yellow/20"
@@ -130,6 +127,8 @@ const Home: NextPage<HomeProps> = () => {
             </svg>
             <Link href="/vacancies">Our Vacancies</Link>
           </motion.span>
+
+          {/* White line and arrow down icon */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -154,6 +153,8 @@ const Home: NextPage<HomeProps> = () => {
               <circle cx="25" cy="25" r="24.5" stroke="#F6F2EC" />
             </svg>
           </motion.div>
+
+
           <motion.h1
             style={{ x: xPosition4 }}
             initial={{ opacity: 0 }}
@@ -163,6 +164,8 @@ const Home: NextPage<HomeProps> = () => {
           >
             We're not your average recruiting firm.
           </motion.h1>
+
+
           <motion.h2
             style={{ opacity: opacityValue1 }}
             initial={{ opacity: 0 }}
@@ -176,34 +179,10 @@ const Home: NextPage<HomeProps> = () => {
             talent scouting, fusing our savvy and practicality to deliver
             extraordinary employment opportunities for our clients.
           </motion.h2>
-          <motion.h3
-            style={{ opacity: opacityValue1 }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: hasScrolled ? 1 : 0 }}
-            transition={{ duration: 0.5 }}
-            className="pt-16 text-6xl"
-          >
-            {count}
-          </motion.h3>
-          <motion.h4
-            style={{ opacity: opacityValue1 }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: hasScrolled ? 1 : 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-3xl font-bold uppercase tracking-tighter text-color-yellow/80"
-          >
-            Active Talents
-          </motion.h4>
-          <motion.h2
-            style={{ opacity: opacityValue1 }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: hasScrolled ? 1 : 0 }}
-            transition={{ duration: 0.5 }}
-            className="pr-16 tracking-tighter"
-          >
-            Supporting a Wide Range of Employers and Job Seekers, from Startups
-            to Fortune 500 Companies.
-          </motion.h2>
+          
+          <ActiveWorkers hasScrolled={hasScrolled} opacityValue1={opacityValue1} />
+
+          {/* numbers */}
           <motion.div
             style={{ x: xPosition5 }}
             initial={{ opacity: 0 }}
@@ -245,7 +224,7 @@ const Home: NextPage<HomeProps> = () => {
               <p>Learn More</p>
             </Link>
           </span>
-          <Banner />
+          <SucessPillarsDropdown />
           <h1 className="mt-24 text-lg font-bold">
             <span className="pr-1 text-color-yellow">"</span>In our firm's
             initial years, Engnr quickly scaled its operations by employing
