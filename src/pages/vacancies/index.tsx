@@ -58,7 +58,7 @@ const Vacancies: NextPage = () => {
             Explore exciting job opportunities at Engnr. Join us and shape the
             future of work.
           </p>
-          <div>Error occurred: {error.message}</div>;
+          <div>Error occurred: {error.message}</div>
         </div>
       </MainLayout>
     );
