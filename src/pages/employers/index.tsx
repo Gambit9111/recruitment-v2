@@ -5,8 +5,8 @@ import MainLayout from '@/components/layouts/MainLayout';
 // Define the page component
 const Employers: React.FC = () => (
   <MainLayout>
-    <div className="container mx-auto p-4">
-      <h1 className="text-4xl font-bold mb-4">For Employers</h1>
+    <div className="mx-auto">
+      <h1 className="gradient-text mt-12 pr-28 text-3xl font-bold uppercase tracking-tighter">For Employers</h1>
 
       <section className="mb-8">
         <h2 className="text-2xl font-bold mb-2">Why Partner With Us?</h2>

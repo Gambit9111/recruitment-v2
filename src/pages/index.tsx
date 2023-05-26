@@ -11,13 +11,7 @@ import Link from "next/link";
 
 import React, { useState, useEffect } from "react";
 
-import {
-  motion,
-  useTransform,
-  useScroll,
-} from "framer-motion";
-
-
+import { motion, useTransform, useScroll } from "framer-motion";
 
 import SuccessCard from "@/components/misc/SuccessCard";
 import SucessPillarsDropdown from "@/components/content/SucessPillarsDropdown";
@@ -33,19 +27,24 @@ const textVariants = {
   visible3: { opacity: 1, y: 0, transition: { duration: 0.45 } },
 };
 
+const letterVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.025 } },
+};
+
 type HomeProps = {};
 
 const Home: NextPage<HomeProps> = () => {
-  const { scrollY } = useScroll();  // * checks the page scroll status in some value
-  const [hasScrolled, setHasScrolled] = useState(false);  // * true after page has been scrolled
-
+  const { scrollY } = useScroll(); // * checks the page scroll status in some value
+  const [hasScrolled, setHasScrolled] = useState(false); // * true after page has been scrolled
 
   // TODO refactor animations, these are pretty random
   const xPosition1 = useTransform(scrollY, [300, 10], ["-70vw", "0vw"]);
   const xPosition2 = useTransform(scrollY, [300, 10], ["70vw", "0vw"]);
   const yPosition3 = useTransform(scrollY, [300, 100], ["-100vh", "0vh"]);
   const xPosition4 = useTransform(scrollY, [350, 10], ["0vw", "100vw"]);
-  const xPosition5 = useTransform(scrollY, [400, 10], ["0vw", "100vw"]);
+  const xPosition5 = useTransform(scrollY, [380, 10], ["0vw", "100vw"]);
+
   const opacityValue1 = useTransform(scrollY, [400, 10], [1, 0]);
 
   // * checks if the page has been scrolled
@@ -59,7 +58,6 @@ const Home: NextPage<HomeProps> = () => {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, [hasScrolled]);
-
 
   return (
     <>
@@ -79,7 +77,6 @@ const Home: NextPage<HomeProps> = () => {
             className="gradient-circle"
           />
 
-
           <motion.h1
             style={{ x: xPosition1 }}
             variants={textVariants}
@@ -89,7 +86,6 @@ const Home: NextPage<HomeProps> = () => {
           >
             Big Goals? When Results matter, Engnr. Delivers.
           </motion.h1>
-
 
           <motion.h2
             style={{ x: xPosition2 }}
@@ -154,7 +150,6 @@ const Home: NextPage<HomeProps> = () => {
             </svg>
           </motion.div>
 
-
           <motion.h1
             style={{ x: xPosition4 }}
             initial={{ opacity: 0 }}
@@ -164,7 +159,6 @@ const Home: NextPage<HomeProps> = () => {
           >
             We're not your average recruiting firm.
           </motion.h1>
-
 
           <motion.h2
             style={{ opacity: opacityValue1 }}
@@ -179,8 +173,11 @@ const Home: NextPage<HomeProps> = () => {
             talent scouting, fusing our savvy and practicality to deliver
             extraordinary employment opportunities for our clients.
           </motion.h2>
-          
-          <ActiveWorkers hasScrolled={hasScrolled} opacityValue1={opacityValue1} />
+
+          <ActiveWorkers
+            hasScrolled={hasScrolled}
+            opacityValue1={opacityValue1}
+          />
 
           {/* numbers */}
           <motion.div
@@ -211,7 +208,9 @@ const Home: NextPage<HomeProps> = () => {
           </motion.div>
           <div className="h-[1px] w-full bg-color-white" />
           {/* Service Pillars */}
-          <h1 className="mt-16 text-2xl font-medium tracking-tighter ">
+          <h1
+            className="mt-16 text-2xl font-medium tracking-tighter "
+          >
             Service Pillars
           </h1>
           <h2 className="mt-2 pr-10 tracking-tighter text-color-white/80">

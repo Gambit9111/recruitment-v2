@@ -37,8 +37,8 @@ const Vacancies: NextPage = () => {
   if (loading) {
     return (
       <MainLayout>
-        <div className="flex min-h-screen flex-col items-center gap-4 p-4">
-          <h1 className="text-3xl font-bold">Current Vacancies</h1>
+        <div className="flex min-h-screen flex-col items-center gap-4">
+          <h1 className="gradient-text mt-12 pr-28 text-3xl font-bold uppercase tracking-tighter">Current Vacancies</h1>
           <p>
             Explore exciting job opportunities at Engnr. Join us and shape the
             future of work.
@@ -52,8 +52,8 @@ const Vacancies: NextPage = () => {
   if (error) {
     return (
       <MainLayout>
-        <div className="flex min-h-screen flex-col items-center gap-4 p-4">
-          <h1 className="text-3xl font-bold">Current Vacancies</h1>
+        <div className="flex min-h-screen flex-col items-center gap-4">
+          <h1 className="gradient-text mt-12 pr-28 text-3xl font-bold uppercase tracking-tighter"></h1>
           <p>
             Explore exciting job opportunities at Engnr. Join us and shape the
             future of work.
@@ -66,8 +66,8 @@ const Vacancies: NextPage = () => {
 
   return (
     <MainLayout>
-      <div className="flex min-h-screen flex-col items-center gap-4 p-4">
-        <h1 className="text-3xl font-bold">Current Vacancies</h1>
+      <div className="flex min-h-screen flex-col items-center gap-4">
+        <h1 className="gradient-text mt-12 pr-28 text-3xl font-bold uppercase tracking-tighter">Current Vacancies</h1>
         <p>
           Explore exciting job opportunities at Engnr. Join us and shape the
           future of work.

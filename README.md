@@ -6,10 +6,10 @@ a) refactor the code and start adding comments before its too late :c DONE
 
 2) Add icons to the service pillars section DONE
 
-3) Figure out if I like the our stories section, possibly change it completely
-
 4) Animate rest of the landing page
 
 5) Style and animate the rest of the pages
 
 6) Start working on desktop view
+
+3) Figure out if I like the our stories section, possibly change it completely  
